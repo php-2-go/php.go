@@ -61,12 +61,20 @@ func QueryParse(q string) (map[string]string) {
 
 // Unparse URL query.
 //
-// @param  q map[string]interface{}
+// @param  q interface{}
 // @return (string)
-func QueryUnparse(q map[string]interface{}) (string) {
+func QueryUnparse(q interface{}) (string) {
     r := make([]string, 0)
-    for k, v := range q {
-        r = append(r, _joinKeyValue(k, v))
+    switch q := q.(type) {
+        case map[string]string:
+            for k, v := range q {
+                r = append(r, _joinKeyValue(k, v))
+            }
+        case map[string]interface{}:
+            for k, v := range q {
+                r = append(r, _joinKeyValue(k, v))
+            }
+            break
     }
     return _s.Implode(r, "&")
 }
