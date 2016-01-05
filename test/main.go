@@ -1,27 +1,31 @@
 package main
 
 import (
-    "fmt"
-    _s "php/String"
+    "php"
+    _u "php/Url"
+    // _s "php/String"
 )
 
-// println()
-
 func main() {
-    s:= "0abcçdef"
-    fmt.Println(_s.Pos(s, "ç"))
-    fmt.Println(_s.Posi(s, "Ç"))
-    fmt.Println(_s.Posr(s, "ç"))
-    fmt.Println(_s.Posri(s, "Ç"))
+    x := _u.QueryParse("a=1&b")
+    php.Dumpa(x)
+    y := _u.QueryUnparse(x)
+    php.Dumps(y)
 
-    // fmt.Println(_s.Len(s))
-    // fmt.Println(_s.Rev(s))
+    // s:= "0abcçdef"
+    // php.Dump(_s.Pos(s, "ç"))
+    // php.Dump(_s.Posi(s, "Ç"))
+    // php.Dump(_s.Posr(s, "ç"))
+    // php.Dump(_s.Posri(s, "Ç"))
 
-    // fmt.Printf("%#v\n", _s.Sub(s, -1, nil))
-    // fmt.Printf("%#v\n", _s.Sub(s, -2, nil))
-    // fmt.Printf("%#v\n", _s.Sub(s, -3, 1))
-    // fmt.Printf("%#v\n", _s.Sub(s, 1, nil))
-    // fmt.Printf("%#v\n", _s.Sub(s, 1, 1))
-    // fmt.Printf("%#v\n", _s.Sub(s, 6, 2))
-    // fmt.Printf("%#v\n", _s.Sub(s, 1, -6))
+    // php.Dump(_s.Len(s))
+    // php.Dump(_s.Rev(s))
+
+    // php.Dumpf("%#v", _s.Sub(s, -1, nil))
+    // php.Dumpf("%#v", _s.Sub(s, -2, nil))
+    // php.Dumpf("%#v", _s.Sub(s, -3, 1))
+    // php.Dumpf("%#v", _s.Sub(s, 1, nil))
+    // php.Dumpf("%#v", _s.Sub(s, 1, 1))
+    // php.Dumpf("%#v", _s.Sub(s, 6, 2))
+    // php.Dumpf("%#v", _s.Sub(s, 1, -6))
 }
