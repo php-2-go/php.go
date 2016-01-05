@@ -16,6 +16,10 @@ func Pos(s, ss string) (int) {
     return _str.Index(s, ss)
 }
 
+func Posr(s, ss string) (int) {
+    return _str.LastIndex(s, ss)
+}
+
 // func Posi(s, ss string) (int) {}
 
 func Rev(s string) (string) {
