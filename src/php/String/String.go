@@ -28,8 +28,6 @@ func Posri(s, ss string) (int) {
     return _str.LastIndexAny(s, _str.ToLower(ss))
 }
 
-// func Posi(s, ss string) (int) {}
-
 func Rev(s string) (string) {
     sr := []rune(s)
     sl := len(sr)
