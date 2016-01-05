@@ -5,6 +5,7 @@ import (
 )
 
 import (
+    "php"
     _i "php/Integer"
 )
 
@@ -72,4 +73,50 @@ func Sub(s string, ss, sl interface{}) (string) {
     } else {
         return string(rs[ssl: len(rs) - sll])
     }
+}
+
+// Trim.
+//
+// @param  s  string
+// @param  sc string
+// @return (string)
+func Trim(s, sc string) (string) {
+    if sc == "" {
+        return _str.TrimSpace(s)
+    }
+    return _str.Trim(s, sc)
+}
+
+// Explode.
+//
+// @param  i string
+// @param  s string
+// @param  n int
+// @return ([]string)
+func Explode(i, s string, n int) ([]string) {
+    r := _str.SplitN(i, s, n)
+    if len(r) < 2 {
+        return nil
+    }
+    return r
+}
+
+// Implode.
+//
+// @param  i interface{}
+// @param  s string
+// @param  n int
+// @return ([]string)
+func Implode(i interface{}, s string) (string) {
+    var r string
+    switch iv := i.(type) {
+        case []int:
+            for _, v := range iv {
+                r += php.String(v) + s
+            }
+            r = r[: len(r) -1]
+        case []string:
+            r = _str.Join(iv, s)
+    }
+    return r
 }
