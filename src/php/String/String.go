@@ -4,7 +4,9 @@ import (
     _n "php/Integer"
 )
 
-// func Len(s string) (uint) {}
+func Len(s string) (int) {
+    return len([]rune(s))
+}
 
 // func Pos(s, ss string) (int, bool) {}
 // func Posi(s, ss string) (int, bool) {}
