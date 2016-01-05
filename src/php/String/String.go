@@ -1,5 +1,10 @@
 package String
 
+// func Len(s string) (uint) {}
+
+// func Pos(s, ss string) (int, bool) {}
+// func Posi(s, ss string) (int, bool) {}
+
 func Rev(s string) (string) {
     sr := []rune(s)
     sl := len(sr)
