@@ -16,8 +16,16 @@ func Pos(s, ss string) (int) {
     return _str.Index(s, ss)
 }
 
+func Posi(s, ss string) (int) {
+    return _str.IndexAny(s, _str.ToLower(ss))
+}
+
 func Posr(s, ss string) (int) {
     return _str.LastIndex(s, ss)
+}
+
+func Posri(s, ss string) (int) {
+    return _str.LastIndexAny(s, _str.ToLower(ss))
 }
 
 // func Posi(s, ss string) (int) {}
