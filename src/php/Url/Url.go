@@ -43,8 +43,16 @@ func QueryParse(q string) (map[string]string) {
     }
     if tmp := _str.Split(q, "&"); len(tmp) >= 2 {
         for _, tm := range tmp {
-            if t := _str.SplitN(tm, "=", 2); len(t) == 2 {
-                r[t[0]] = t[1]
+            if t := _str.SplitN(tm, "=", 2); len(t) >= 1 {
+                var k, v string
+                k = _s.Trim(t[0], "")
+                for i, _ := range t {
+                    if i == 1 {
+                        v = _s.Trim(t[1], "")
+                        break
+                    }
+                }
+                r[k] = v
             }
         }
     }
