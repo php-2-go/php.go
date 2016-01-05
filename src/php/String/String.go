@@ -1,15 +1,22 @@
 package String
 
 import (
-    _n "php/Integer"
+    _str "strings"
+)
+
+import (
+    _i "php/Integer"
 )
 
 func Len(s string) (int) {
     return len([]rune(s))
 }
 
-// func Pos(s, ss string) (int, bool) {}
-// func Posi(s, ss string) (int, bool) {}
+func Pos(s, ss string) (int) {
+    return _str.Index(s, ss)
+}
+
+// func Posi(s, ss string) (int) {}
 
 func Rev(s string) (string) {
     sr := []rune(s)
@@ -24,7 +31,7 @@ func Rev(s string) (string) {
 func Sub(s string, ss, sl interface{}) (string) {
     rs := []rune(s)
     rl := len(rs)
-    ssi, sli := _n.Int(ss), _n.Int(sl)
+    ssi, sli := _i.Int(ss), _i.Int(sl)
     ssl, sll := ssi, sli
     // make abs
     if ssi <= -1 { ssl = (ssi * -1) }
