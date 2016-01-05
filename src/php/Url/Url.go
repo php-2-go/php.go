@@ -1,0 +1,105 @@
+package Url
+
+import (
+    _fmt "fmt"
+    _url "net/url"
+    _str "strings"
+)
+
+import (
+    "php"
+    _s "php/String"
+)
+
+// URL encode.
+//
+// @param  s string
+// @return (string)
+func Encode(s string) (string) {
+    return _url.QueryEscape(s)
+}
+
+// URL decode.
+//
+// @param  s string
+// @return (string)
+func Decode(s string) (string) {
+    s, err := _url.QueryUnescape(s)
+    if err != nil {
+        return ""
+    }
+    return s
+}
+
+// Parse URL query.
+//
+// @param  q string
+// @return (map[string]string)
+func QueryParse(q string) (map[string]string) {
+    r := make(map[string]string)
+    // ensure explode action
+    if _str.Index(q, "&") == -1 {
+        q += "&"
+    }
+    if tmp := _str.Split(q, "&"); len(tmp) >= 2 {
+        for _, tm := range tmp {
+            if t := _str.SplitN(tm, "=", 2); len(t) == 2 {
+                r[t[0]] = t[1]
+            }
+        }
+    }
+    return r
+}
+
+// Unparse URL query.
+//
+// @param  q map[string]interface{}
+// @return (string)
+func QueryUnparse(q map[string]interface{}) (string) {
+    r := make([]string, 0)
+    for k, v := range q {
+        r = append(r, _joinKeyValue(k, v))
+    }
+    return _s.Implode(r, "&")
+}
+
+// Join key => value pairs (only 2-dims arrays).
+//
+// @param  k string
+// @param  v interface{}
+// @return (string)
+func _joinKeyValue(k string, v interface{}) (string) {
+    var s string
+    switch v := v.(type) {
+        case []int:
+            for _, vv := range v {
+                s += _fmt.Sprintf("%s[]=%v&", Encode(k), vv)
+            }
+            break
+        case []string:
+            for _, vv := range v {
+                s += _fmt.Sprintf("%s[]=%v&", Encode(k), vv)
+            }
+            break
+        case map[string]interface{}:
+            for kk, vv := range v {
+                switch vv := vv.(type) {
+                    case []int, []string:
+                        s += _joinKeyValue(k, vv)
+                        break
+                    case map[string]interface{}:
+                        for kkk, vvv := range vv {
+                            s += _joinKeyValue(kkk, vvv)
+                        }
+                        break
+                    default:
+                        s += _fmt.Sprintf("%s[%s]=%v&",
+                            Encode(k), Encode(kk), Encode(php.String(vv)))
+                }
+            }
+            break
+        default:
+            s = _fmt.Sprintf("%s=%v", Encode(k), Encode(php.String(v)))
+    }
+    return _s.Trim(s, "&")
+}
