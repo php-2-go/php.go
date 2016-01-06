@@ -20,5 +20,5 @@ func Type(args... interface{}) (string) {
 // @param  i interface{}
 // @return (bool)
 func Empty(i interface{}) (bool) {
-    return (i == nil || i == false || i == "" || i == 0)
+    return (i == nil || i == false || i == "" || i == 0 || i == 0.0)
 }
