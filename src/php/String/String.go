@@ -142,7 +142,7 @@ func Implode(i interface{}, s string) (string) {
             for _, v := range iv {
                 r += php.String(v) + s
             }
-            r = r[: len(r) -1]
+            r = r[: len(r) - 1]
         case []string:
             r = _str.Join(iv, s)
     }
