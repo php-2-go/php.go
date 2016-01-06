@@ -8,44 +8,41 @@ import (
     "php"
 )
 
-func Len(s string) (int) {
+func Length(s string) (int) {
     return len([]rune(s))
 }
 
-func Pos(s, ss string) (int) {
+func Index(s, ss string) (int) {
     return _str.Index(s, ss)
 }
 
-func Posi(s, ss string) (int) {
+func IndexNC(s, ss string) (int) {
     return _str.IndexAny(s, _str.ToLower(ss))
 }
 
-func Posr(s, ss string) (int) {
+func IndexLast(s, ss string) (int) {
     return _str.LastIndex(s, ss)
 }
 
-func Posri(s, ss string) (int) {
+func IndexLastNC(s, ss string) (int) {
     return _str.LastIndexAny(s, _str.ToLower(ss))
 }
 
-func Rev(s string) (string) {
-    sr := []rune(s)
-    sl := len(sr)
-    rr := make([]rune, sl)
+func Reverse(s string) (string) {
+    sr := []rune(s); sl := len(sr); rr := make([]rune, sl)
     for i, ii := (sl - 1), 0; i >= 0; i, ii = (i - 1), (ii + 1) {
         rr[ii] = sr[i]
     }
     return string(rr)
 }
 
-// Substring extract.
+// Substring.
 //
 // @param s  string
 // @param ss interface{} Start.
 // @param sl interface{} Length.
-func Sub(s string, ss, sl interface{}) (string) {
-    rs := []rune(s)
-    rl := len(rs)
+func Substring(s string, ss, sl interface{}) (string) {
+    rs := []rune(s); rl := len(rs)
     ssi, sli := php.Int(ss), php.Int(sl)
     ssl, sll := ssi, sli
     // make abs
@@ -56,7 +53,7 @@ func Sub(s string, ss, sl interface{}) (string) {
     if sll >= rl { return "" }
     if sl == nil {
         if ssi <= -1 {
-            rr := []rune(Rev(s))
+            rr := []rune(Reverse(s))
             if ssl >= len(rr) {
                 return s
             }
