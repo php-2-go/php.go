@@ -148,3 +148,22 @@ func Implode(i interface{}, s string) (string) {
     }
     return r
 }
+
+// Ord.
+//
+// @param  c string
+// @return (rune)
+func Ord(c string) (rune) {
+    if r := []rune(c); len(r) == 1 {
+        return r[0]
+    }
+    return 0
+}
+
+// Chr.
+//
+// @param o rune
+// @return (string)
+func Chr(o rune) (string) {
+    return string(o)
+}
