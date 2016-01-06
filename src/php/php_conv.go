@@ -27,6 +27,17 @@ func Float(i interface{}) (float64) {
     return 0.00
 }
 
+// Bool converter.
+//
+// @param  i interface{}
+// @return (float64)
+func Bool(i interface{}) (bool) {
+    if i == "0" || Empty(i) {
+        return false
+    }
+    return true
+}
+
 // String converter.
 //
 // @param  i interface{}
