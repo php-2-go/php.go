@@ -38,6 +38,11 @@ func Rev(s string) (string) {
     return string(rr)
 }
 
+// Substring extract.
+//
+// @param s  string
+// @param ss interface{} Start.
+// @param sl interface{} Length.
 func Sub(s string, ss, sl interface{}) (string) {
     rs := []rune(s)
     rl := len(rs)
