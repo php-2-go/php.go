@@ -1,7 +1,8 @@
 package php
 
 import (
-    _n "php/Number"
+    _fmt "fmt"
+    _strc "strconv"
 )
 
 // Int converter.
@@ -9,8 +10,9 @@ import (
 // @param  i interface{}
 // @return (int)
 func Int(i interface{}) (int) {
-    if n := _n.Convert(i, "int"); n != nil {
-        return n.(int)
+    r, err := _strc.Atoi(_fmt.Sprintf("%v", i))
+    if err == nil {
+        return r
     }
     return 0
 }
