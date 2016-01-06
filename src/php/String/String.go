@@ -133,8 +133,7 @@ func Explode(i, s string, n int) ([]string) {
 //
 // @param  i interface{}
 // @param  s string
-// @param  n int
-// @return ([]string)
+// @return (string)
 func Implode(i interface{}, s string) (string) {
     var r string
     switch iv := i.(type) {
