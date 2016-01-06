@@ -2,7 +2,7 @@ package php
 
 import (
     _fmt "fmt"
-    _str "strings"
+    _rex "regexp"
     _strc "strconv"
 )
 // Int converter.

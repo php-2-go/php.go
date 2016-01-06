@@ -2,7 +2,6 @@ package php
 
 import (
     _fmt "fmt"
-    _rex "regexp"
     _str "strings"
 )
 
