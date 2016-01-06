@@ -24,7 +24,7 @@ func Float(i interface{}) (float64) {
     if r, err := _strc.ParseFloat(String(i), 64); err == nil {
         return r
     }
-    return 0.00
+    return 0.0
 }
 
 // Bool converter.
