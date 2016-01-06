@@ -2,9 +2,9 @@ package php
 
 import (
     _fmt "fmt"
+    _str "strings"
     _strc "strconv"
 )
-
 // Int converter.
 //
 // @param  i interface{}
@@ -33,6 +33,19 @@ func Float(i interface{}) (float64) {
 //
 // @param  i interface{}
 // @return (string)
+// @panics
 func String(i interface{}) (string) {
-    return _fmt.Sprintf("%v", i)
+    switch i.(type) {
+        case nil:
+            return ""
+        case int, bool, string:
+            return _fmt.Sprintf("%v", i)
+        default:
+            it := Type(i)
+            // check numerics
+            if ok, _ := _rex.MatchString("u?int(\\d+)?|float(32|64)", it); ok {
+                return _fmt.Sprintf("%v", i)
+            }
+            panic("Unsupported input type '"+ it +"' given!")
+    }
 }
