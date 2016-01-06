@@ -8,26 +8,54 @@ import (
     "php"
 )
 
+// Length.
+//
+// @param  s string
+// @return (int)
 func Length(s string) (int) {
     return len([]rune(s))
 }
 
+// Index.
+//
+// @param  s  string
+// @param  ss string
+// @return (int)
 func Index(s, ss string) (int) {
     return _str.Index(s, ss)
 }
 
+// Index no-case.
+//
+// @param  s  string
+// @param  ss string
+// @return (int)
 func IndexNC(s, ss string) (int) {
     return _str.IndexAny(s, _str.ToLower(ss))
 }
 
+// Index last.
+//
+// @param  s  string
+// @param  ss string
+// @return (int)
 func IndexLast(s, ss string) (int) {
     return _str.LastIndex(s, ss)
 }
 
+// Index last no-case.
+//
+// @param  s  string
+// @param  ss string
+// @return (int)
 func IndexLastNC(s, ss string) (int) {
     return _str.LastIndexAny(s, _str.ToLower(ss))
 }
 
+// Reverse.
+//
+// @param  s string
+// @return (string)
 func Reverse(s string) (string) {
     sr := []rune(s); sl := len(sr); rr := make([]rune, sl)
     for i, ii := (sl - 1), 0; i >= 0; i, ii = (i - 1), (ii + 1) {
