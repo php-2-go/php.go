@@ -6,7 +6,6 @@ import (
 
 import (
     "php"
-    _i "php/Integer"
 )
 
 func Len(s string) (int) {
@@ -42,7 +41,7 @@ func Rev(s string) (string) {
 func Sub(s string, ss, sl interface{}) (string) {
     rs := []rune(s)
     rl := len(rs)
-    ssi, sli := _i.Int(ss), _i.Int(sl)
+    ssi, sli := php.Int(ss), php.Int(sl)
     ssl, sll := ssi, sli
     // make abs
     if ssi <= -1 { ssl = (ssi * -1) }
