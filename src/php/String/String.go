@@ -93,11 +93,10 @@ func Trim(s, sc string) (string) {
 // @param  n int
 // @return ([]string)
 func Explode(i, s string, n int) ([]string) {
-    r := _str.SplitN(i, s, n)
-    if len(r) < 2 {
-        return nil
+    if r := _str.SplitN(i, s, n); len(r) >= 2 {
+        return r
     }
-    return r
+    return nil
 }
 
 // Implode.
