@@ -5,13 +5,14 @@ import (
     _rex "regexp"
     _strc "strconv"
 )
+
 // Int converter.
 //
 // @param  i interface{}
-// @return (int64)
-func Int(i interface{}) (int64) {
+// @return (int)
+func Int(i interface{}) (int) {
     if r, err := _strc.ParseInt(String(i), 10, 64); err == nil {
-        return r
+        return int(r)
     }
     return 0
 }
