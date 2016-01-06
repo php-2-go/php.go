@@ -1,5 +1,9 @@
 package php
 
+import (
+    _fmt "fmt"
+)
+
 // Dump.
 //
 // @param  args... interface{}
