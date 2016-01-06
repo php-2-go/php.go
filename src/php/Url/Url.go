@@ -24,8 +24,7 @@ func Encode(s string) (string) {
 // @param  s string
 // @return (string)
 func Decode(s string) (string) {
-    s, err := _url.QueryUnescape(s)
-    if err != nil {
+    if s, err := _url.QueryUnescape(s); err != nil {
         return ""
     }
     return s
