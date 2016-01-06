@@ -14,14 +14,3 @@ func Int(i interface{}) (int) {
     }
     return 0
 }
-
-// UInt converter.
-//
-// @param  i interface{}
-// @return (uint)
-func UInt(i interface{}) (uint) {
-    if n := _n.Convert(i, "uint"); n != nil {
-        return n.(uint)
-    }
-    return 0
-}
