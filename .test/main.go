@@ -8,12 +8,6 @@ import (
 )
 
 func main() {
-    // m := php.SMix{"foo": 1}
-    // im := php.IMix{0: php.IMix{1: 0.1}}
-    // php.Dumpv(im[0].(php.IMix)[1])
-    // sm := php.SMix{"foo": php.SMix{"bar": true}}
-    // php.Dumpv(sm["foo"].(php.SMix)["bar"])
-
     // x := "1.1"
     // php.Dumpa(php.Int(x))
     // php.Dumpa(php.Float(x))
