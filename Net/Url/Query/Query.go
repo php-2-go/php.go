@@ -24,14 +24,15 @@ func Parse(q string) (map[string]string) {
         for _, tm := range tmp {
             if t := _str.SplitN(tm, "=", 2); len(t) >= 1 {
                 var k, v string
-                k = _str.TrimSpace(t[0])
-                for i, _ := range t {
-                    if i == 1 {
-                        v = _str.TrimSpace(t[1])
-                        break
+                if k = _str.TrimSpace(t[0]); k != "" {
+                    for i, _ := range t {
+                        if i == 1 {
+                            v = _str.TrimSpace(t[1])
+                            break
+                        }
                     }
+                    r[k] = v
                 }
-                r[k] = v
             }
         }
     }
