@@ -3,8 +3,8 @@ package main
 import (
     "php"
     // _s "php/String"
-    php_net_url "php/Net/Url"
-    php_net_url_query "php/Net/Url/Query"
+    // php_net_url "php/Net/Url"
+    // php_net_url_query "php/Net/Url/Query"
 )
 
 func main() {
@@ -14,10 +14,13 @@ func main() {
     // php.Dumpa(php.Bool(x))
     // php.Dumpa(php.String(x))
 
-    php.Dump(php_net_url.Encode("a=1"))
-    php.Dump(php_net_url.Decode(php_net_url.Encode("a=1")))
-    php.Dump(php_net_url_query.Parse("a=1"))
-    php.Dump(php_net_url_query.Unparse(php_net_url_query.Parse("a=1")))
+    // php.Dumpa(php.IsEmpty(""))
+    // php.Dumpa(php.IsEmpty("0"))
+
+    // php.Dump(php_net_url.Encode("a=1"))
+    // php.Dump(php_net_url.Decode(php_net_url.Encode("a=1")))
+    // php.Dump(php_net_url_query.Parse("a=1"))
+    // php.Dump(php_net_url_query.Unparse(php_net_url_query.Parse("a=1")))
 
     // s:= "0açe"
     // php.Dump(_s.Index(s, "ç"))
