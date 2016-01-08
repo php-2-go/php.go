@@ -12,7 +12,7 @@ func Dump(args... interface{}) {
     _fmt.Println(args...)
 }
 
-// Dump as string.
+// Dump as value.
 //
 // @param  args... interface{}
 // @return (void)
