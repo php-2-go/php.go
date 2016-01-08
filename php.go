@@ -5,6 +5,10 @@ import (
     _str "strings"
 )
 
+const (
+    VERSION = "1.0.0-beta"
+)
+
 func Shutup() {}
 
 // Get real type.
