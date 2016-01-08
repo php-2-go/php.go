@@ -51,11 +51,10 @@ func String(i interface{}) (string) {
         case int, bool, string:
             return _fmt.Sprintf("%v", i)
         default:
-            it := Type(i)
             // check numerics
-            if ok, _ := _rex.MatchString("u?int(\\d+)?|float(32|64)", it); ok {
+            if ok, _ := _rex.MatchString("u?int(\\d+)?|float(32|64)", Type(i)); ok {
                 return _fmt.Sprintf("%v", i)
             }
-            panic("Unsupported input type '"+ it +"' given!")
+            panic("Unsupported input type '"+ Type(i) +"' given!")
     }
 }
