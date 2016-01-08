@@ -5,9 +5,15 @@ import (
     _str "strings"
 )
 
+// Mix type (waiting impatiently)..
+// @link https://github.com/golang/go/issues/13869
+type IMix map[int]interface{}
+type SMix map[string]interface{}
+
 const (
     VERSION = "1.0.0-beta"
 )
+
 
 func Shutup() {}
 
