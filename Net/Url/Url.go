@@ -78,7 +78,7 @@ func QueryUnparse(q interface{}) (string) {
     return _s.Implode(r, "&")
 }
 
-// Join key => value pairs (only 2-dims arrays).
+// Join key => value pairs (only 2-dims arrays for now).
 //
 // @param  k string
 // @param  v interface{}
