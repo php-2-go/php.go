@@ -12,7 +12,7 @@ import (
 //
 // @param  s string
 // @return (int)
-func Length(s string) (int) {
+func Len(s string) (int) {
     return len([]rune(s))
 }
 

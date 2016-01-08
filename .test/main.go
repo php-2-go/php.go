@@ -20,7 +20,7 @@ func main() {
     // php.Dump(_s.IndexLast(s, "ç"))
     // php.Dump(_s.IndexLastNC(s, "Ç"))
 
-    // php.Dump(_s.Length(s))
+    // php.Dump(_s.Len(s))
     // php.Dump(_s.Reverse(s))
 
     // php.Dump(_s.Ord("♥"))
