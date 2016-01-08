@@ -24,10 +24,10 @@ func Encode(s string) (string) {
 // @param  s string
 // @return (string)
 func Decode(s string) (string) {
-    if s, err := _url.QueryUnescape(s); err != nil {
-        return ""
+    if s, err := _url.QueryUnescape(s); err == nil {
+        return s
     }
-    return s
+    return ""
 }
 
 // Parse URL query.
