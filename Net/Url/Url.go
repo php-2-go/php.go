@@ -8,7 +8,6 @@ import (
 
 import (
     "php"
-    _s "php/String"
 )
 
 // URL encode.
@@ -44,10 +43,10 @@ func QueryParse(q string) (map[string]string) {
         for _, tm := range tmp {
             if t := _str.SplitN(tm, "=", 2); len(t) >= 1 {
                 var k, v string
-                k = _s.Trim(t[0], "")
+                k = _str.TrimSpace(t[0])
                 for i, _ := range t {
                     if i == 1 {
-                        v = _s.Trim(t[1], "")
+                        v = _str.TrimSpace(t[1])
                         break
                     }
                 }
@@ -75,7 +74,7 @@ func QueryUnparse(q interface{}) (string) {
             }
             break
     }
-    return _s.Implode(r, "&")
+    return _str.Join(r, "&")
 }
 
 // Join key => value pairs (only 2-dims arrays for now).
@@ -116,5 +115,5 @@ func _joinKeyValue(k string, v interface{}) (string) {
         default:
             s = _fmt.Sprintf("%s=%v", Encode(k), Encode(php.String(v)))
     }
-    return _s.Trim(s, "&")
+    return _str.Trim(s, "&")
 }
