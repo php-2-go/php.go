@@ -3,7 +3,8 @@ package main
 import (
     "php"
     // _s "php/String"
-    // _u "php/Net/Url"
+    php_net_url "php/Net/Url"
+    php_net_url_query "php/Net/Url/Query"
 )
 
 func main() {
@@ -12,6 +13,11 @@ func main() {
     // php.Dumpa(php.Float(x))
     // php.Dumpa(php.Bool(x))
     // php.Dumpa(php.String(x))
+
+    php.Dump(php_net_url.Encode("a=1"))
+    php.Dump(php_net_url.Decode(php_net_url.Encode("a=1")))
+    php.Dump(php_net_url_query.Parse("a=1"))
+    php.Dump(php_net_url_query.Unparse(php_net_url_query.Parse("a=1")))
 
     // s:= "0açe"
     // php.Dump(_s.Index(s, "ç"))
