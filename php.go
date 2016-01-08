@@ -21,8 +21,13 @@ func Type(args... interface{}) (string) {
 
 // Check is empty.
 //
-// @param  i interface{}
+// @param  i... interface{}
 // @return (bool)
-func IsEmpty(i interface{}) (bool) {
-    return (i == nil || i == false || i == "" || i == 0 || i == 0.0)
+func IsEmpty(i... interface{}) (bool) {
+    for _, iv := range i {
+        if iv == nil || iv == false || iv == "" || iv == 0 || iv == 0.0 {
+            return true
+        }
+    }
+    return false
 }
