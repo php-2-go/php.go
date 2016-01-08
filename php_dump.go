@@ -16,7 +16,7 @@ func Dump(args... interface{}) {
 //
 // @param  args... interface{}
 // @return (void)
-func Dumps(args... interface{}) {
+func Dumpv(args... interface{}) {
     var f string
     for _, arg := range args {
         _ = arg // silence..
