@@ -1,11 +1,22 @@
 package List
 
+func New() {}
+func NewInt() {}
+func NewString() {}
+
 func Map() {}
 func MapInt() {}
 func MapString() {}
 
-func MapFilter() {}
-func MapIntFilter() {}
-func MapStringFilter() {}
+// func Filter() {}
+// ..
+
+// func Uniq() {}
+// ...
+
+// func Pick() {}
+// ...
+
+
 
 // ...
