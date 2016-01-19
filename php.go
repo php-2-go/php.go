@@ -20,6 +20,21 @@ func Type(args... interface{}) (string) {
     return _str.Replace(_fmt.Sprintf("%T", args[0]), " ", "", -1)
 }
 
+// Check is set.
+//
+// @param  i... interface{}
+// @return (bool)
+func IsSet(i... interface{}) (bool) {
+    for _, iv := range i {
+        if iv == nil {
+            return false
+        }
+        // @todo check map values switching by types
+        // ..
+    }
+    return true
+}
+
 // Check is empty.
 //
 // @param  i... interface{}
