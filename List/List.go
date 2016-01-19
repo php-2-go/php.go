@@ -1,4 +1,4 @@
-package Any
+package List
 
 func Map() {}
 func MapInt() {}
