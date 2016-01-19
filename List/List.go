@@ -11,9 +11,6 @@ func MapString() {}
 // func Filter() {}
 // ..
 
-// func Uniq() {}
-// ...
-
 // func Pick() {}
 // ...
 
