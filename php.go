@@ -41,9 +41,10 @@ func IsSet(i... interface{}) (bool) {
 // @return (bool)
 func IsEmpty(i... interface{}) (bool) {
     for _, iv := range i {
-        if iv == nil || iv == false || iv == "" || iv == 0 || iv == 0.0 {
+        if iv == nil || iv == false || iv == "" || iv == "0" || iv == 0 || iv == 0.0 {
             return true
         }
+        // @todo check array too
     }
     return false
 }
