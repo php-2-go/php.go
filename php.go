@@ -44,7 +44,7 @@ func IsEmpty(i... interface{}) (bool) {
         if iv == nil || iv == false || iv == "" || iv == "0" || iv == 0 || iv == 0.0 {
             return true
         }
-        // @todo check array too
+        // @todo check arrays
     }
     return false
 }
