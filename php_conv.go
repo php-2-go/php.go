@@ -33,10 +33,7 @@ func Float(i interface{}) (float64) {
 // @param  i interface{}
 // @return (float64)
 func Bool(i interface{}) (bool) {
-    if i == "0" || IsEmpty(i) {
-        return false
-    }
-    return true
+    return IsEmpty(i)
 }
 
 // String converter.
